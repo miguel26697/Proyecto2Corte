@@ -1,5 +1,11 @@
-body {
-    background: darkcyan;
+
+body{
+    background-image: url("R1.jpg"); 
+    opacity: 95%;
+    background-repeat: repeat;
+    background-position: center;
+    position: relative;
+    background-size: cover;
 }
 
 .fill{
@@ -32,4 +38,10 @@ body {
 
 .invisible{
     display: none;
+}
+.EstiloRQ{
+    font-family: serif;
+    font-size: xx-large;
+    text-align: center;
+    width: 100%;
 }
