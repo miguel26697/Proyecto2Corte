@@ -36,6 +36,13 @@ public class Server extends WebSocketServer {
         object += "]}";
         conn.send(object);
         clients.add(cliente);
+        
+        int prueba =65;
+        for (int i = 0; i < 10; i++) {
+            
+        }
+        String baraja = "{\"tipo\":\"baraja\",\"arreglo\":\"" + prueba;
+        conn.send(baraja);
     }
 
     @Override
@@ -75,7 +82,7 @@ public class Server extends WebSocketServer {
                 }
                 for (int i = 0; i < clients.size(); i++) {
                     if (clients.get(i).getHash() == hashDestino) {
-                        object = "{\"tipo\":\"privado\",\"nombre\":\"" + cliente.getNombre() + "\",\"mensaje\":\"" + priv.getString("mensaje") + "\"}";
+                        object = "{\"tipo\":\"privad\",\"nombre\":\"" + cliente.getNombre() + "\",\"mensaje\":\"" + priv.getString("mensaje") + "\"}";
                         clients.get(i).getConn().send(object);
                         break;
                     }

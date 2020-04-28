@@ -10,6 +10,15 @@ public class Cliente {
     private WebSocket conn;
     private int hash;
     private String nombre;
+    private int[] arreglo ;
+
+    public int[] getArreglo() {
+        return arreglo;
+    }
+
+    public void setArreglo(int[] arreglo) {
+        this.arreglo = arreglo;
+    }
     /**
      * 
      * @return 
