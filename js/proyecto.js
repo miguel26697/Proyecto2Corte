@@ -41,3 +41,7 @@ function dragDrop() {
   this.className = 'empty';
   this.append(fill);
 }
+
+function holamundo(){
+  console.log('hola mundo');
+}
