@@ -41,3 +41,8 @@ function dragDrop() {
   this.className = 'empty';
   this.append(fill);
 }
+
+function MiguelHola() {
+  this.className = 'empty';
+  this.append(fill);
+}
