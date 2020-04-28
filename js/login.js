@@ -13,7 +13,7 @@ $(document).ready(function(){
 		}, 
 		success: function(user){
 			alert("Bienvenido de vuelta " +user.name);
-			window.location.assign("principal.html");
+			window.location.assign("index.html");
 		},
 		error: function(err){
 			alert("Error"+JSON.stringify(err));
@@ -21,49 +21,39 @@ $(document).ready(function(){
 	})
 	}
 })
-
+/*
 $("body").keydown(function(e) {
   if(e.keyCode == 13) { // enter
   	acceder();
   }
-});
+});*/
 
-$(".ui.left.icon.input").click(function(){
-	$(this).removeClass("error");
-});
 
 $("#register").click(function(){
 	name = $("#registroNombre").val();
-	email= $("#registroCorreo").val();
-	password = $("#registroPassword").val();
-	if(name===""||email==="" || password===""){
-		alert("No puede dejar campos vacíos");
+	if(name===""){
+		alert("No puede dejar el campo vacío");
 		$("#registerName").addClass("error");
-		$("#registerMail").addClass("error");
-		$("#registerPassword").addClass("error");
 	}
-	if(register(name, email, password)){
+	if(register(name)){
 		alert ("¡Bienvenido a Rummy Q online "+name+"!");
 	}
 });
-$("#login").click(function(){
+$("#register").click(function(){
 	acceder();
 });
 
 
 
 function acceder(){
-	email = $("#correo").val();
-	password = $("#contra").val();
-	if(email==="" || password===""){
+	name = $("#correo").val();
+	if(name===""){
 		alert("No puede dejar campos vacíos a la hora de ingresar");
-		$("#userLogin").addClass("error");
-		$("#passwordLogin").addClass("error");
+		$("#userRegister").addClass("error");
 	}
 	else{
-		login(email, password);
+		register(name);
 	}
-	
 }
 
 /**
@@ -71,10 +61,10 @@ function acceder(){
 *	@param email que es el correo del usuario
 *	@param password que es la contraseña del usuario
 */
-function login(email, password){
-	var toSend = JSON.stringify({"email":email,"password":password});
+function register(name){
+	var toSend = JSON.stringify({"name":name});
 	$.ajax({
-		url: enlace+'/Login',
+		url: enlace+'/Register',
 		type: 'POST',
 		dataType: 'json',
 		contentType: 'application/json; charset=utf-8',	
@@ -82,12 +72,11 @@ function login(email, password){
 		success: function(e){
 			setCookie("token",e,0.0833);
 			console.log(e);
-			window.location.assign("principal.html");
+			window.location.assign("index.html");
 		},
 		error: function(err){
 			alert("Error: Usuario o contraseña inválidos ");
 			$("#userLogin").addClass("error");
-			$("#passwordLogin").addClass("error");
 		},
 	})
 }
@@ -96,18 +85,3 @@ function login(email, password){
 *	@param name que es el nombre completo del usuario
 *	@param email que es el correo del usuario
 */
-function register(name, email, password){
-	var toSend = JSON.stringify({"name":nombre, "email":correo, "password":contra})
-	$.ajax({
-		url: enlace+'/Register',
-		type: 'POST',
-		dataType: 'json',
-		data:toSend,
-		success	: function	(e){
-			alert(e);
-		},
-		error: function	(err){
-			alert("Error "+ JSON.stringify(err));
-		}
-	});
-}
