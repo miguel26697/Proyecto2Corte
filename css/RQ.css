@@ -1,0 +1,48 @@
+.EstiloRQ{
+	font-family: serif;
+	font-size: xx-large;
+	text-align: center;
+	width: 100%;
+}
+
+#encabezadoLogin, #encabezadoRegister{
+	text-align: center;
+	font-family: serif;
+}
+
+footer{
+	text-align: center; 
+}
+
+body{
+	background-image: url("R1.jpg"); 
+	opacity: 95%;
+	background-repeat: repeat;
+	background-position: center;
+	position: relative;
+	background-size: cover;
+}
+#content{
+	margin-top: 50px;
+}
+
+.cajaContenedora{
+	text-align: center;
+	opacity: 90%;
+	color : #ffffff;
+	padding : 4px;
+	width : 500px;
+	height : 350px;
+	overflow : auto; 
+}
+table{
+	opacity: 100%;
+}
+
+h1,h2{
+	font-size: large;
+}
+
+.ui.card.product{
+	color:black;
+}
