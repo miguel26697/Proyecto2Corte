@@ -27,10 +27,10 @@ public class Server extends WebSocketServer {
         cliente.setConn(conn);
         cliente.setHash(conn.getRemoteSocketAddress().hashCode());
         String object = "{\"tipo\":\"hash\",\"hash\":\"" + cliente.getHash() + "\",\"conectados\":[";
-        for (int i=0;i<clients.size();i++) {
-            object +="{\"usuario\": \""+clients.get(i).getNombre()+"\",\"hash\":\""+clients.get(i).getHash()+"\"}";
-            if(i<clients.size()-1){
-                object +=",";
+        for (int i = 0; i < clients.size(); i++) {
+            object += "{\"usuario\": \"" + clients.get(i).getNombre() + "\",\"hash\":\"" + clients.get(i).getHash() + "\"}";
+            if (i < clients.size() - 1) {
+                object += ",";
             }
         }
         object += "]}";
@@ -49,33 +49,33 @@ public class Server extends WebSocketServer {
                 conn.send(message);
                 break;
             case "publico":
-                JSONObject mensajePublico = new JSONObject(obj.getString("message"));                
-                object = "{\"tipo\":\"publico\",\"nombre\":\""+mensajePublico.get("nombre")+"\",\"mensaje\":\"" +mensajePublico.get("mensaje") + "\"}";
+                JSONObject mensajePublico = new JSONObject(obj.getString("message"));
+                object = "{\"tipo\":\"publico\",\"nombre\":\"" + mensajePublico.get("nombre") + "\",\"mensaje\":\"" + mensajePublico.get("mensaje") + "\"}";
                 this.sendToAll(conn, object);
                 break;
             case "nuevo":
                 for (int i = 0; i < clients.size(); i++) {
-                    if (clients.get(i).getHash()==Integer.parseInt(obj.getString("hash"))) {
-                        clients.get(i).setNombre(obj.getString("usuario")); 
-                        object = "{\"tipo\":\"conexion\",\"hash\":\""+clients.get(i).getHash()+"\",\"nombre\":\"" + clients.get(i).getNombre() + "\"}";
-                        this.sendToAll(conn, object); 
+                    if (clients.get(i).getHash() == Integer.parseInt(obj.getString("hash"))) {
+                        clients.get(i).setNombre(obj.getString("usuario"));
+                        object = "{\"tipo\":\"conexion\",\"hash\":\"" + clients.get(i).getHash() + "\",\"nombre\":\"" + clients.get(i).getNombre() + "\"}";
+                        this.sendToAll(conn, object);
                         break;
                     }
-                }           
+                }
                 break;
             case "privado":
                 int hashDestino = (int) obj.getInt("hashDestino");
                 JSONObject priv = new JSONObject(obj.getString("message"));
                 Cliente cliente = null;
                 for (int i = 0; i < clients.size(); i++) {
-                    if(clients.get(i).getConn().equals(conn)){
+                    if (clients.get(i).getConn().equals(conn)) {
                         cliente = clients.get(i);
                         break;
                     }
                 }
                 for (int i = 0; i < clients.size(); i++) {
                     if (clients.get(i).getHash() == hashDestino) {
-                        object = "{\"tipo\":\"privado\",\"nombre\":\"" + cliente.getNombre()+ "\",\"mensaje\":\"" + priv.getString("mensaje") + "\"}";
+                        object = "{\"tipo\":\"privado\",\"nombre\":\"" + cliente.getNombre() + "\",\"mensaje\":\"" + priv.getString("mensaje") + "\"}";
                         clients.get(i).getConn().send(object);
                         break;
                     }
@@ -89,7 +89,7 @@ public class Server extends WebSocketServer {
 
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
-        System.out.println("Client "+code+" disconnected: " + reason);
+        System.out.println("Client " + code + " disconnected: " + reason);
         for (int i = 0; i < clients.size(); i++) {
             if (clients.get(i).getConn().equals(conn)) {
                 clients.remove(i);
