@@ -13,6 +13,7 @@ function getCookie(cname) {
 	}
 	return "";
 } 
+
 function setCookie(cname, cvalue, exdays) {
 	var d = new Date();
 	d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -22,10 +23,9 @@ function setCookie(cname, cvalue, exdays) {
 
 var user;
  $("#ingreso").click(function () {
-	
     user = $("#user").val();
     setCookie("usuario",user,0.5);
-	window.location.assign("index2.html");
+	window.location.assign("juego.html");
 
 });
 

@@ -4,11 +4,12 @@ var websocket = new WebSocket(wsUri); //creamos el socket
 
 websocket.onopen = function (evt) { //manejamos los eventos...
 	console.log("Conectado..."); //... y aparecerá en la pantalla
-	ping();
-	var obj = JSON.parse(evt.data);
-	if (obj.tipo === "baraja") {
+  ping();
+  console.log(evt);
+
+	if (evt.data.tipo === "baraja") {
 		console.log(obj.arreglo);
-	}
+  }
 	var a = {
 		tipo: "nuevo",
 		user: getCookie("usuario"),
@@ -62,6 +63,11 @@ websocket.onmessage = function (evt) { // cuando se recibe un mensaje
 };
 websocket.onerror = function (evt) {
 	console.log("oho!.. error:" + evt.data);
+};
+
+function enviarMensaje(texto) {
+	websocket.send(texto);
+	console.log("Enviando:" + texto);
 };
 
 function ping() {
