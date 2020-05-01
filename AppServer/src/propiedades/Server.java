@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import modelo.Cliente;
-
+import modelo.Barajas;
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
@@ -15,15 +15,23 @@ public class Server extends WebSocketServer {
 //	private static Map<Integer,Set<WebSocket>> Rooms = new HashMap<>();
 
     private static List<Cliente> clients = new ArrayList();
+    public static List<Integer> amarillo1 = new ArrayList<Integer>();
 
     public Server() {
         super(new InetSocketAddress(30001));
+        
+        Barajas baraja = new Barajas();
+        baraja.getAmarillo1().add(5);
+        baraja.getAmarillo1().add(4);
+        baraja.getAmarillo1().add(6);
+        baraja.getAmarillo1().add(8);
     }
 
     @Override
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
         System.out.println("New client connected: " + conn.getRemoteSocketAddress() + " hash " + conn.getRemoteSocketAddress().hashCode());
         Cliente cliente = new Cliente();
+        Barajas ba = new Barajas();
         cliente.setConn(conn);
         cliente.setHash(conn.getRemoteSocketAddress().hashCode());
         String object = "{\"tipo\":\"hash\",\"hash\":\"" + cliente.getHash() + "\",\"conectados\":[";
@@ -36,14 +44,13 @@ public class Server extends WebSocketServer {
         object += "]}";
         conn.send(object);
         clients.add(cliente);
-        
-        int prueba =65;
-        for (int i = 0; i < 10; i++) {
-            
-        }
+        int prueba =45;
         String baraja = "{\"tipo\":\"baraja\",\"arreglo\":\"" + prueba;
-        conn.send(baraja);
+        
+        clients.get(1).getConn().send(baraja);
+      
     }
+   
 
     @Override
     public void onMessage(WebSocket conn, String message) {
@@ -69,6 +76,7 @@ public class Server extends WebSocketServer {
                         break;
                     }
                 }
+                
                 break;
             case "privado":
                 int hashDestino = (int) obj.getInt("hashDestino");
@@ -127,6 +135,8 @@ public class Server extends WebSocketServer {
     public static void main(String[] args) {
         Server server = new Server();
         server.start();
+       
+      
     }
 
 }

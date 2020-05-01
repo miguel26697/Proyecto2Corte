@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.java_websocket.WebSocket;
 
 /**
@@ -12,13 +14,16 @@ public class Cliente {
     private String nombre;
     private int[] arreglo ;
 
-    public int[] getArreglo() {
-        return arreglo;
+    public List<Integer> getAmarillo1() {
+        return amarillo1;
     }
 
-    public void setArreglo(int[] arreglo) {
-        this.arreglo = arreglo;
+    public void setAmarillo1(List<Integer> amarillo1) {
+        this.amarillo1 = amarillo1;
     }
+    public List<Integer> amarillo1 = new ArrayList<Integer>();
+
+   
     /**
      * 
      * @return 
