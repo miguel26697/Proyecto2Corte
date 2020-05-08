@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="css/micss.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" href="images/CartaN13.png" type="image/png" />
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+	<title>Rummy Q online</title>
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<body>
+	<div id="nombre1">
+		<div id="nombre">
+			<div class="ui inverted massive black fixed menu">
+				<div class="center menu">
+					<label class="item EstiloRQ">Rummy Q Online</label>
+					<div class="item">
+						<img class="ui mini circular image" src="img/jug1.jpg">
+						<div id="creacion1" class="ui yellow sub header">
+							<div id="jugador1" class="ui yellow sub header"> </div>
+						</div>
+
+					</div>
+					<div class="item">
+						<img class="ui mini circular image" src="img/jug2.png">
+						<div id="creacion2" class="ui blue sub header">
+							<div id="jugador2" class="ui blue sub header"> </div>
+						</div>
+					</div>
+					<div class="item">
+						<img src="img/jug3.jpg" class="ui mini circular image">
+						<div id="creacion3" class="ui red sub header">
+							<div id="jugador3" class="ui red sub header"> </div>
+						</div>
+					</div>
+					<div class="item">
+						<img src="img/jug3.jpg" class="ui mini circular image">
+						<div id="creacion4" class="ui white sub header">
+							<div id="jugador4" class="ui white sub header"> </div>
+						</div>
+					</div>
+				</div>
+				<div class="ui horizontal list"></div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="tablero" class="ui inverted segment">
+
+		<img id="imagen"> </img>
+		<img id="imagen1"> </img>
+		<img id="imagen2"> </img>
+		<img id="imagen3"> </img>
+		<img id="imagen4"></img>
+		<img id="imagen5"></img>
+		<img id="imagen6"></img>
+		<img id="imagen7"></img>
+
+		<div id="botonAsignar">
+			<button id="asignar" class="ui  inverted black button" aling="center">ASIGNAR
+				<br>
+				<p id="play" class="logoPlay"><i class="caret square right outline icon"></i>
+			</button>
+		</div>
+		</br>
+	</div>
+
+	<div id="creacion">
+		<div id="dragDrop"></div>
+	</div>
+
+	<div id="botonesJugadas" class="ui larg inverted red buttons" aling="center">
+		<div class="contenedor-modal">
+			<button id="trio" class="ui  button" aling="center" >TRIO
+				<br>
+				<p id="mano" class="logoMano"><i class="hand peace outline icon"></i> +
+					<i class="hand point up outline icon"></i>
+			</button>
+			<button id="escalera" class="ui button" aling="center" >ESCALERA
+				<br>
+				<p id="mano" class="logoMano"><i class="slack hash icon"></i>
+			</button>
+			<button id="cambio" class="ui button" aling="center" data-toggle="modal" data-target="#miModal">CAMBIO
+				<br>
+				<p id="mano" class="logoMano"><i class="file hand paper outline icon"></i>
+			</button>
+
+		</div>
+	</div>
+
+	<div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div id="est" class="modal-dialog" role="document">
+			<div id="estiloN">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&arial;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel"></h4>
+				</div>
+				Su turno ha pasado.
+				<p id="mano" class="logoManoturno"><i class="thumbs up icon"></i>
+
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+<script type="text/javascript" src="js/semantic.min.js"></script>
+<script type="text/javascript" src="js/comunicacion.js"></script>
+<script type="text/javascript" src="js/initialScript.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</html>
