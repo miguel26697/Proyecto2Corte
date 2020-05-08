@@ -5,7 +5,7 @@
 	width: 100%;
 }
 
-#encabezadoLogin, #encabezadoRegister{
+#encabezadoRegister{
 	text-align: center;
 	font-family: serif;
 }

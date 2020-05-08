@@ -1,0 +1,111 @@
+*{ margin: 0px;
+	padding: 0px;
+ }
+.EstiloRQ{
+	font-family: serif;
+	font-size: xx-large;
+	text-align: center;
+	width: 100%;
+	color: white; 
+}
+
+body{
+	background-image: url("R3.jpg"); 
+	opacity: 85%;
+	background-repeat: repeat;
+	background-position: center;
+	position: relative;
+	background-size: cover;
+
+}
+div#fichas{
+	margin-right: 5px;
+	margin-left: 15px;
+ 	width: 1320px;
+ 	height: 270px;
+ 	background-color: blue;
+ 	opacity: 100%;
+ 	bottom: 0px;
+ 	position: absolute;
+ 	}
+div#tablero{
+
+	margin-top: 100px;
+	margin-right: 330px;
+	margin-left: 20px;
+ 	width: 2300px;
+ 	height: 420px;
+ 	background-color:rgba(136, 255, 0, 0.185);
+ 	opacity: 100%;
+}
+div#trio{
+	float:left;
+	margin-top: 10px;
+	margin-right: 400px;
+	margin-left: 20px;
+ 	width: 1000px;
+ 	height: 385px;
+ 	background-color:rgb(17, 0, 255);
+ 	opacity: 100%;
+}
+div#escalera{
+	float:left;
+	margin-top: -400px;
+	margin-right: 330px;
+	margin-left: 1200px;
+ 	width: 1000px;
+ 	height: 390px;
+ 	background-color:rgb(255, 0, 0);
+ 	opacity: 100%;
+}
+
+.logoMano{
+   font-size: 35px;
+   padding: 15px;
+}
+.logoPlay{
+	font-size: 50px;
+   padding: 20px;
+}
+div#botonAsignar{
+ width: 200px;
+ height: 100px; 
+  margin-left: 50%;
+  margin-top: 25%;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+}
+.cajaContenedora{
+	text-align: center;
+	opacity: 90%;
+	color : #191919;
+	padding : 4px;
+	width : 500px;
+	height : 350px;
+	overflow : auto; 
+}
+
+.contenedor-modal button {
+
+	position: relative;
+	top: 100%;
+  }
+  div#estiloN{
+	  font-family: serif;
+	  font-size: 300%;
+	  text-align: center;
+	  color: lawngreen; 
+	  opacity: 100%;
+  }
+  .logoManoturno{
+	 font-size: 50px;
+	 padding: 35px;
+  }
+  div#est{
+	  font-family: serif;
+	  font-size: xx-large;
+	  text-align: center;
+	  width: 50%; 
+	  opacity: 100%;
+  }

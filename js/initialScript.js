@@ -25,7 +25,7 @@ var user;
  $("#ingreso").click(function () {
     user = $("#user").val();
     setCookie("usuario",user,0.5);
-	window.location.assign("juego.html");
+	window.location.assign("tablero.html");
 
 });
 

@@ -12,18 +12,6 @@ public class Cliente {
     private WebSocket conn;
     private int hash;
     private String nombre;
-    private int[] arreglo ;
-
-    public List<Integer> getAmarillo1() {
-        return amarillo1;
-    }
-
-    public void setAmarillo1(List<Integer> amarillo1) {
-        this.amarillo1 = amarillo1;
-    }
-    public List<Integer> amarillo1 = new ArrayList<Integer>();
-
-   
     /**
      * 
      * @return 
