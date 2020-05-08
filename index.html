@@ -1,24 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+	<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="css/RQ.css">
+	<meta charset="utf-8">
+	<title>Rummy Q</title>
 
- 
-    <meta charset="UTF-8">
-	<link href="css/estilos.css" rel="stylesheet" type="text/css"/>
-    <title>Drang & Drop</title>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <div class="empty">
-        <div class="fill" draggable="true">
-
-        </div>
-    </div>
-    <div class="empty">
-    </div>
-    <div class="empty"></div>
-    <div class="empty"></div>
-    <div class="empty"></div>
+	<div class="ui inverted massive black fixed menu">
+		<div class="center menu" align ="center">
+			<label class="item EstiloRQ">Rummy Q online</label>
+		</div>
+	</div>
+	<div id="content" class="ui grid">
+		<div class="one wide column">
+		</div>
+		<div class="ui fourteen wide black column">
+			<div class="ui placeholder segment">
+				<div class="ui vertical black divider">
+					
+				</div>
+				<div  id="acceso" class="clear ui one column very relaxed stackable grid gray">
+					<div class="column">
+						<div id="encabezadoRegister" class="ui huge header">Regístrate</div>
+						<div class="ui form">
+							<div class="field">
+								<label for="registroNombre">Nombre Usuario</label>
+								<div id="registerName" class="ui left icon input">
+									<input id="user" type="text" placeholder="Nombre completo">
+									<i class="user icon"></i>
+								</div>
+							</div>
+							<div id="ingreso" class="ui blue submit button">Regístrate y juega</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<p id="textoFooter" class="EstiloRQ">Activa las cookies de tu navegador</p>
+				Síguenos en redes sociales
+				<button class="ui facebook button">
+					<i class="facebook icon"></i>
+					Facebook
+				</button>
+				<button class="ui instagram button">
+					<i class="instagram icon"></i>
+					Instagram
+				</button>
+				<button class="ui youtube button">
+					<i class="youtube icon"></i>
+					YouTube
+				</button>
+				<button class="ui twitter button">
+					<i class="twitter icon"></i>
+					Twitter
+				</button>
+			</footer>
+		</div>
+		<div class="one wide column">
+			
+		</div>
+	</div>
 </body>
-<script src="js/proyecto.js"></script>
+<script type="text/javascript" src="js/semantic.min.js"></script>
+<script type="text/javascript" src="js/initialScript.js"></script>
 </html>
